@@ -2,14 +2,14 @@
     "name": "Poppod.UIAnimation",
     "rootNamespace": "Poppod.UIAnimation",
     "references": [
-        ""
+        "LeanTween"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
-    "autoReferenced": false,
+    "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false

@@ -24,9 +24,8 @@ public class UIAnimationEditor : Editor
 
     private void OnEnable()
     {
-        // Load the icon - you can use any built-in Unity icon or your custom one
-        //logoContent = EditorGUIUtility.IconContent("Animation Icon");
-        logoContent = new GUIContent((Texture2D)AssetDatabase.LoadAssetAtPath("Assets/Poppod/Resources/PoppodLogo.png", typeof(Texture2D)));
+        // Load logo from package path instead of Assets path
+        LoadPackageResources();
     }
 
     private GUIStyle GetHeaderStyle()
@@ -43,6 +42,25 @@ public class UIAnimationEditor : Editor
         return headerStyle;
     }
 
+    private void LoadPackageResources()
+    {
+        if (logoContent == null)
+        {
+            // Look for the logo in the package directory
+            string[] guids = AssetDatabase.FindAssets("PoppodLogo t:texture2d", new[] { "Packages/com.poppod.uianimation" });
+            if (guids.Length > 0)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guids[0]);
+                Texture2D icon = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+                logoContent = new GUIContent(icon);
+            }
+            else
+            {
+                // Fallback to default Unity icon if package icon not found
+                logoContent = EditorGUIUtility.IconContent("Animation.Record");
+            }
+        }
+    }
 
     public override void OnInspectorGUI()
     {

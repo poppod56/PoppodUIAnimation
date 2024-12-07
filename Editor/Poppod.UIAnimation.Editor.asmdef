@@ -1,18 +1,19 @@
 {
-  "name": "Poppod.UIAnimation.Editor",
-  "rootNamespace": "Poppod.UIAnimation.Editor",
-  "references": [
-    "Poppod.UIAnimation"
-  ],
-  "includePlatforms": [
-    "Editor"
-  ],
-  "excludePlatforms": [],
-  "allowUnsafeCode": false,
-  "overrideReferences": false,
-  "precompiledReferences": [],
-  "autoReferenced": true,
-  "defineConstraints": [],
-  "versionDefines": [],
-  "noEngineReferences": false
+    "name": "Poppod.UIAnimation.Editor",
+    "rootNamespace": "Poppod.UIAnimation.Editor",
+    "references": [
+        "Poppod.UIAnimation",
+        "LeanTween"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
