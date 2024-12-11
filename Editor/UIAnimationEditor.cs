@@ -75,7 +75,7 @@ public class UIAnimationEditor : Editor
         EditorGUILayout.BeginVertical();
         EditorGUILayout.LabelField("Poppod UI Animation", GetHeaderStyle());
         EditorGUILayout.Space(5);
-        EditorGUILayout.LabelField("Version 0.1.0", EditorStyles.miniLabel);
+        EditorGUILayout.LabelField("Version 0.1.2", EditorStyles.miniLabel);
         EditorGUILayout.EndVertical();
 
         EditorGUILayout.EndHorizontal();
@@ -95,9 +95,9 @@ public class UIAnimationEditor : Editor
 
         EditorGUILayout.LabelField("Animation States", EditorStyles.boldLabel);
         // Original State Sections
-        DrawStateSection("On Start Animation", ref showStartSettings, animation.onStartPreset, animation);
-        DrawStateSection("On Update Animation", ref showUpdateSettings, animation.onUpdatePreset, animation);
-        DrawStateSection("On End Animation", ref showEndSettings, animation.onEndPreset, animation);
+        DrawStateSection("On Start ", ref showStartSettings, animation.onStartPreset, animation);
+        DrawStateSection("On Update ", ref showUpdateSettings, animation.onUpdatePreset, animation);
+        DrawStateSection("On End ", ref showEndSettings, animation.onEndPreset, animation);
 
         // Button States
         if (animation is UIButtonAnimation buttonAnimation)
@@ -105,17 +105,17 @@ public class UIAnimationEditor : Editor
             EditorGUILayout.Space(10);
             EditorGUILayout.LabelField("Interactive Button States", EditorStyles.boldLabel);
 
-            DrawStateSection("On Click Animation", ref showClickSettings, buttonAnimation.onClickPreset, animation);
-            DrawStateSection("On Hover Animation", ref showHoverSettings, buttonAnimation.onHoverPreset, animation);
-            DrawStateSection("On Unhover Animation", ref showUnhoverSettings, buttonAnimation.onUnhoverPreset, animation);
-            DrawStateSection("On Select Animation", ref showSelectSettings, buttonAnimation.onSelectPreset, animation);
-            DrawStateSection("On Unselect Animation", ref showUnselectSettings, buttonAnimation.onUnselectPreset, animation);
+            DrawStateSection("On Click ", ref showClickSettings, buttonAnimation.onClickPreset, animation);
+            DrawStateSection("On Hover ", ref showHoverSettings, buttonAnimation.onHoverPreset, animation);
+            DrawStateSection("On Unhover ", ref showUnhoverSettings, buttonAnimation.onUnhoverPreset, animation);
+            DrawStateSection("On Select ", ref showSelectSettings, buttonAnimation.onSelectPreset, animation);
+            DrawStateSection("On Unselect ", ref showUnselectSettings, buttonAnimation.onUnselectPreset, animation);
 
             EditorGUILayout.Space(10);
             EditorGUILayout.LabelField("Non-Interactive Button States", EditorStyles.boldLabel);
 
-            DrawStateSection("On Disabled Hover Animation", ref showDisabledHoverSettings, buttonAnimation.onDisabledHoverPreset, animation);
-            DrawStateSection("On Disabled Click Animation", ref showDisabledClickSettings, buttonAnimation.onDisabledClickPreset, animation);
+            DrawStateSection("On Disabled Hover", ref showDisabledHoverSettings, buttonAnimation.onDisabledHoverPreset, animation);
+            DrawStateSection("On Disabled Click", ref showDisabledClickSettings, buttonAnimation.onDisabledClickPreset, animation);
         }
 
         if (animation is UIPanelAnimation panelAnimation)
@@ -123,8 +123,8 @@ public class UIAnimationEditor : Editor
             EditorGUILayout.Space(10);
             EditorGUILayout.LabelField("Panel States", EditorStyles.boldLabel);
 
-            DrawStateSection("On Open Panel Animation", ref showOpenPanelSettings, panelAnimation.onOpenPreset, animation);
-            DrawStateSection("On Close Panel Animation", ref showClosePanelSettings, panelAnimation.onClosePreset, animation);
+            DrawStateSection("On Open Panel ", ref showOpenPanelSettings, panelAnimation.onOpenPreset, animation);
+            DrawStateSection("On Close Panel ", ref showClosePanelSettings, panelAnimation.onClosePreset, animation);
         }
     }
 
